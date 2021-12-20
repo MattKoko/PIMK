@@ -1,0 +1,25 @@
+{
+  "fields": {
+    "project": {
+      "id": "10000"
+    },
+    "issuetype": {
+      "id": "10000"
+    },
+    "customfield_10011": "Manual Epic 001",
+    "summary": "Manual Epic 001",
+    "components": [],
+    "reporter": {
+      "id": "61bdb07791c049006fd8374f"
+    },
+    "fixVersions": [],
+    "priority": {
+      "id": "3",
+      "name": "Medium",
+      "iconUrl": "https://privatematkoko.atlassian.net/images/icons/priorities/medium.svg"
+    },
+    "labels": [],
+    "customfield_10020": null
+  },
+  "update": {}
+}

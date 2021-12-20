@@ -1,3 +1,31 @@
 {
-  "data": "asdada"
+  "projectName": [
+    "Process Automation",
+    "Team Management",
+    "Process Management",
+    "Artificial Intelligence",
+    "Algorithms",
+    "Data Structures",
+    "Information Technology",
+    "Computer Science"
+  ],
+  "projectCodes": [
+    "ABCD",
+    "BCDE",
+    "CDEF",
+    "MKMK",
+    "KMKM",
+    "PWPW",
+    "WPWP",
+    "PPWW"
+  ],
+  "projectTemplate": [
+    "Scrum",
+    "Kanban",
+    "Issue Tracking"
+  ],
+  "projectType": [
+    "Team managed",
+    "Company managed"
+  ]
 }
