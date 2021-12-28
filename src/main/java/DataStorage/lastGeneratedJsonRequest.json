@@ -1,0 +1,37 @@
+{
+  "fields": {
+    "project": {
+      "id": "10000"
+    },
+    "issuetype": {
+      "id": "10002"
+    },
+    "summary": "TASK - API - 92135 - bug automate create",
+    "components": [],
+    "description": {
+      "version": 1,
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Not very detailed description of the issue"
+            }
+          ]
+        }
+      ]
+    },
+    "reporter": {
+      "id": "61bdb07791c049006fd8374f"
+    },
+    "priority": {
+      "id": "3",
+      "name": "Medium",
+      "iconUrl": "https://privatematkoko.atlassian.net/images/icons/priorities/medium.svg"
+    },
+    "labels": []
+  },
+  "update": {}
+}

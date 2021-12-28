@@ -1,0 +1,27 @@
+2021-12-28 21:38:32 INFO  JiraRequestHandler:15 - Preparing issue object with name: Auto generated TASK - 79056
+2021-12-28 21:38:32 INFO  JiraRequestHandler:15 - Issue object has been prepared.
+2021-12-28 21:38:33 INFO  JsonDataProvider:15 - New JSON file has been saved in location: C:\Users\kokos\IdeaProjects\JiraAutomation\src\main\java\DataStorage\lastGeneratedJsonRequest.json
+2021-12-28 22:27:44 INFO  JiraRequestHandler:15 - Preparing issue object with name: Auto generated TASK - 26343
+2021-12-28 22:27:44 INFO  JiraRequestHandler:15 - Issue object has been prepared.
+2021-12-28 22:27:44 INFO  JsonDataProvider:15 - New JSON file has been saved in location: C:\Users\kokos\IdeaProjects\JiraAutomation\src\main\java\DataStorage\lastGeneratedJsonRequest.json
+2021-12-28 22:27:44 INFO  APIConnection:15 - Preparing API request.
+2021-12-28 22:27:44 INFO  JsonParserInternal:15 - Parsing file to String.
+2021-12-28 22:27:47 INFO  APIConnection:15 - Sending API request.
+2021-12-28 22:27:50 INFO  APIConnection:15 - API RESPONSE CODE: 201
+2021-12-28 22:27:50 INFO  JsonParserInternal:15 - Saving JSON String in file
+2021-12-28 22:27:50 INFO  JsonParserInternal:15 - File saved successfully in location: C:\Users\kokos\IdeaProjects\JiraAutomation\src\main\java\DataStorage\Output\JiraAPIResponse01.json
+2021-12-28 23:00:18 INFO  JiraRequestHandler:15 - Preparing issue object with name: Auto generated TASK - 25378 - functionality automate automate
+2021-12-28 23:00:18 INFO  JiraRequestHandler:15 - Issue object has been prepared.
+2021-12-28 23:00:18 INFO  JsonDataProvider:15 - New JSON file has been saved in location: C:\Users\kokos\IdeaProjects\JiraAutomation\src\main\java\DataStorage\lastGeneratedJsonRequest.json
+2021-12-28 23:00:42 INFO  APIConnection:15 - Preparing API request.
+2021-12-28 23:00:42 INFO  JsonParserInternal:15 - Parsing file to String.
+2021-12-28 23:00:51 INFO  JiraRequestHandler:15 - Preparing issue object with name: TASK - API - 68076 - bug new new
+2021-12-28 23:00:51 INFO  JiraRequestHandler:15 - Issue object has been prepared.
+2021-12-28 23:00:51 INFO  JsonDataProvider:15 - New JSON file has been saved in location: C:\Users\kokos\IdeaProjects\JiraAutomation\src\main\java\DataStorage\lastGeneratedJsonRequest.json
+2021-12-28 23:01:00 INFO  APIConnection:15 - Preparing API request.
+2021-12-28 23:01:00 INFO  JsonParserInternal:15 - Parsing file to String.
+2021-12-28 23:01:04 INFO  JiraRequestHandler:15 - Preparing issue object with name: TASK - API - 92135 - bug automate create
+2021-12-28 23:01:04 INFO  JiraRequestHandler:15 - Issue object has been prepared.
+2021-12-28 23:01:04 INFO  JsonDataProvider:15 - New JSON file has been saved in location: C:\Users\kokos\IdeaProjects\JiraAutomation\src\main\java\DataStorage\lastGeneratedJsonRequest.json
+2021-12-28 23:01:10 INFO  APIConnection:15 - Preparing API request.
+2021-12-28 23:01:10 INFO  JsonParserInternal:15 - Parsing file to String.
