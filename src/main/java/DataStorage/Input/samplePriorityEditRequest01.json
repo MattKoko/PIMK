@@ -1,0 +1,9 @@
+{
+  "fields": {
+    "priority": {
+      "name": "Medium",
+      "id": "3",
+      "iconUrl": "https://privatematkoko.atlassian.net/images/icons/priorities/medium.svg"
+    }
+  }
+}
