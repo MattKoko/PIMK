@@ -1,5 +1,10 @@
 package JiraJsonObjects.ModelObjects;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class PriorityModel {
     public String id = "3";
     public String name = "Medium";
