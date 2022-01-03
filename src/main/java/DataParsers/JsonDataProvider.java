@@ -24,7 +24,7 @@ public class JsonDataProvider {
         return issueObject;
     }
 
-    public static void saveIssueObjectAsJsonFile(JiraIssueObject issueObject, String filePathOutput) {
+    public static void saveIssueObjectAsJsonFile(Object issueObject, String filePathOutput) {
         try {
             FileWriter writer = new FileWriter(filePathOutput, false);
             writer.write(new GsonBuilder().setPrettyPrinting().create().toJson(issueObject));
