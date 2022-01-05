@@ -1,0 +1,74 @@
+{
+  "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+  "self": "https://privatematkoko.atlassian.net/rest/api/2/project/10001",
+  "id": "10001",
+  "key": "PIMKK",
+  "description": "",
+  "lead": {
+    "self": "https://privatematkoko.atlassian.net/rest/api/2/user?accountId=61aba76d977c5b00724a066f",
+    "accountId": "61aba76d977c5b00724a066f",
+    "avatarUrls": {
+      "48x48": "https://secure.gravatar.com/avatar/3ff12a725adbc1fccdff570a6395153e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMK-1.png",
+      "24x24": "https://secure.gravatar.com/avatar/3ff12a725adbc1fccdff570a6395153e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMK-1.png",
+      "16x16": "https://secure.gravatar.com/avatar/3ff12a725adbc1fccdff570a6395153e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMK-1.png",
+      "32x32": "https://secure.gravatar.com/avatar/3ff12a725adbc1fccdff570a6395153e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMK-1.png"
+    },
+    "displayName": "Mateusz Kokoszka",
+    "active": true
+  },
+  "components": [],
+  "issueTypes": [
+    {
+      "self": "https://privatematkoko.atlassian.net/rest/api/2/issuetype/10005",
+      "id": "10005",
+      "description": "Mała, wyodrębniona część pracy.",
+      "iconUrl": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+      "name": "Zadanie",
+      "subtask": false,
+      "avatarId": 10318,
+      "hierarchyLevel": 0
+    },
+    {
+      "self": "https://privatematkoko.atlassian.net/rest/api/2/issuetype/10006",
+      "id": "10006",
+      "description": "Epiki śledzą kolekcje powiązanych błędów, historii i zadań.",
+      "iconUrl": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+      "name": "Epik",
+      "subtask": false,
+      "avatarId": 10307,
+      "hierarchyLevel": 1
+    },
+    {
+      "self": "https://privatematkoko.atlassian.net/rest/api/2/issuetype/10007",
+      "id": "10007",
+      "description": "Podzadania śledzą małe elementy, które są częścią większego zadania.",
+      "iconUrl": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+      "name": "Podzadanie",
+      "subtask": true,
+      "avatarId": 10316,
+      "hierarchyLevel": -1
+    }
+  ],
+  "assigneeType": "UNASSIGNED",
+  "versions": [],
+  "name": "Praca Inż Mat Koko Kanban",
+  "roles": {
+    "atlassian-addons-project-access": "https://privatematkoko.atlassian.net/rest/api/2/project/10001/role/10007",
+    "Administrator": "https://privatematkoko.atlassian.net/rest/api/2/project/10001/role/10004",
+    "Viewer": "https://privatematkoko.atlassian.net/rest/api/2/project/10001/role/10006",
+    "Member": "https://privatematkoko.atlassian.net/rest/api/2/project/10001/role/10005"
+  },
+  "avatarUrls": {
+    "48x48": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10424",
+    "24x24": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10424?size=small",
+    "16x16": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10424?size=xsmall",
+    "32x32": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10424?size=medium"
+  },
+  "projectTypeKey": "software",
+  "simplified": true,
+  "style": "next-gen",
+  "isPrivate": false,
+  "properties": {},
+  "entityId": "b21fad6f-b556-4676-8820-8405b1a465a7",
+  "uuid": "b21fad6f-b556-4676-8820-8405b1a465a7"
+}

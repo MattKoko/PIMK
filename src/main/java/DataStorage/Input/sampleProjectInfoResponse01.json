@@ -1,0 +1,94 @@
+{
+  "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+  "self": "https://privatematkoko.atlassian.net/rest/api/2/project/10004",
+  "id": "10004",
+  "key": "TP03",
+  "description": "",
+  "lead": {
+    "self": "https://privatematkoko.atlassian.net/rest/api/2/user?accountId=61bdb07791c049006fd8374f",
+    "accountId": "61bdb07791c049006fd8374f",
+    "avatarUrls": {
+      "48x48": "https://secure.gravatar.com/avatar/f9c06e52dc7bc9da50afa6c41d1602cd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAA-0.png",
+      "24x24": "https://secure.gravatar.com/avatar/f9c06e52dc7bc9da50afa6c41d1602cd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAA-0.png",
+      "16x16": "https://secure.gravatar.com/avatar/f9c06e52dc7bc9da50afa6c41d1602cd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAA-0.png",
+      "32x32": "https://secure.gravatar.com/avatar/f9c06e52dc7bc9da50afa6c41d1602cd?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAA-0.png"
+    },
+    "displayName": "Automatyczna Automatyzacja",
+    "active": true
+  },
+  "components": [],
+  "issueTypes": [
+    {
+      "self": "https://privatematkoko.atlassian.net/rest/api/2/issuetype/10018",
+      "id": "10018",
+      "description": "Funkcja lub cecha wyrażona jako cel użytkownika.",
+      "iconUrl": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10315?size=medium",
+      "name": "Story",
+      "subtask": false,
+      "avatarId": 10315,
+      "hierarchyLevel": 0
+    },
+    {
+      "self": "https://privatematkoko.atlassian.net/rest/api/2/issuetype/10019",
+      "id": "10019",
+      "description": "Mała, wyodrębniona część pracy.",
+      "iconUrl": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+      "name": "Zadanie",
+      "subtask": false,
+      "avatarId": 10318,
+      "hierarchyLevel": 0
+    },
+    {
+      "self": "https://privatematkoko.atlassian.net/rest/api/2/issuetype/10020",
+      "id": "10020",
+      "description": "Problem lub błąd.",
+      "iconUrl": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+      "name": "Błąd w programie",
+      "subtask": false,
+      "avatarId": 10303,
+      "hierarchyLevel": 0
+    },
+    {
+      "self": "https://privatematkoko.atlassian.net/rest/api/2/issuetype/10021",
+      "id": "10021",
+      "description": "Epiki śledzą kolekcje powiązanych błędów, historii i zadań.",
+      "iconUrl": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10307?size=medium",
+      "name": "Epik",
+      "subtask": false,
+      "avatarId": 10307,
+      "hierarchyLevel": 1
+    },
+    {
+      "self": "https://privatematkoko.atlassian.net/rest/api/2/issuetype/10022",
+      "id": "10022",
+      "description": "Podzadania śledzą małe elementy, które są częścią większego zadania.",
+      "iconUrl": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+      "name": "Podzadanie",
+      "subtask": true,
+      "avatarId": 10316,
+      "hierarchyLevel": -1
+    }
+  ],
+  "assigneeType": "UNASSIGNED",
+  "versions": [],
+  "name": "test project 003",
+  "roles": {
+    "atlassian-addons-project-access": "https://privatematkoko.atlassian.net/rest/api/2/project/10004/role/10019",
+    "Administrator": "https://privatematkoko.atlassian.net/rest/api/2/project/10004/role/10016",
+    "Viewer": "https://privatematkoko.atlassian.net/rest/api/2/project/10004/role/10018",
+    "Member": "https://privatematkoko.atlassian.net/rest/api/2/project/10004/role/10017"
+  },
+  "avatarUrls": {
+    "48x48": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10402",
+    "24x24": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10402?size=small",
+    "16x16": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10402?size=xsmall",
+    "32x32": "https://privatematkoko.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10402?size=medium"
+  },
+  "projectTypeKey": "software",
+  "simplified": true,
+  "style": "next-gen",
+  "isPrivate": false,
+  "properties": {},
+  "entityId": "f1dbf5ff-f6ac-424a-9d9a-87e1ff37f3e9",
+  "uuid": "f1dbf5ff-f6ac-424a-9d9a-87e1ff37f3e9"
+}
