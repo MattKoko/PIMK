@@ -1,4 +1,4 @@
-package JiraJsonObjects.RequestObjects.ModelObjects;
+package JiraJsonObjects.IssueRequestObjects.ModelObjects;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,7 +12,7 @@ public class FieldsModel {
     private ProjectModel project = new ProjectModel();
     private IssueTypeModel issuetype = new IssueTypeModel();
     private String summary = "Auto-Auto 007 task";
-    private List<String> components = new ArrayList<>(); //probably Strings
+//    private List<String> components = new ArrayList<>(); //probably Strings
     private DescriptionModel description = new DescriptionModel();
     private ReporterModel reporter = new ReporterModel();
 //    private List<String> fixVersion = new ArrayList<>();

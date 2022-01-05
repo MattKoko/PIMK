@@ -1,6 +1,5 @@
 package DataParsers;
 
-import JiraJsonObjects.RequestObjects.JiraIssueObject;
 import Utils.Log;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

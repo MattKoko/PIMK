@@ -1,6 +1,6 @@
-package JiraJsonObjects.ResponseObjects;
+package JiraJsonObjects.SearchResponseObjects;
 
-import JiraJsonObjects.ResponseObjects.ModelObjects.JiraResponseIssueModel;
+import JiraJsonObjects.SearchResponseObjects.ModelObjects.JiraResponseIssueModel;
 import lombok.Getter;
 import lombok.Setter;
 

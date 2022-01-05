@@ -35,7 +35,7 @@ public class JsonParserInternal {
 
         try(FileWriter writer = new FileWriter(new File(filePath), false)) {
             Gson gson = new GsonBuilder().disableHtmlEscaping().serializeNulls().setPrettyPrinting().create();
-            JsonElement jsonElement = new JsonParser().parse(response.toString());
+            JsonElement jsonElement = new JsonParser().parse(response.asString());
 
             writer.write(String.valueOf(gson.toJson(jsonElement)));
             log.info("File saved successfully in location: " + filePath);

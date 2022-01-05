@@ -4,15 +4,17 @@ import DataParsers.JsonDataProvider;
 import DataParsers.RandomDataGenerator;
 import Enums.IssuePriorityEnum;
 import Enums.IssueTypesEnum;
+import Enums.ProjectTypesEnum;
 import JiraJsonObjects.DataStorageObjects.JiraIssueDataRandomModel;
-import JiraJsonObjects.RequestObjects.ModelObjects.DescriptionModel;
-import JiraJsonObjects.RequestObjects.JiraIssueObject;
+import JiraJsonObjects.IssueRequestObjects.ModelObjects.DescriptionModel;
+import JiraJsonObjects.IssueRequestObjects.JiraIssueObject;
+import JiraJsonObjects.NewProjectRequestObjects.JiraNewProjectRequestObject;
 import Utils.Log;
 
 public class JiraRequestHandler {
     private static final Log log = new Log(new Object(){}.getClass().getEnclosingClass());
 
-    public static void createJiraNewIssueJson(IssueTypesEnum typeOfIssue, String filePathToSaveJson) {
+    public static void createJiraNewIssueJson(String projectId, String projectName, String issueTypeId, IssueTypesEnum typeOfIssue, String filePathToSaveJson) {
         //Preparing random data for issue creation
         JiraIssueDataRandomModel jiraIssueData = JsonDataProvider.getJiraObjectFromJson(filePathToSaveJson + "Input\\randomJiraIssueData.json", JiraIssueDataRandomModel.class);
         String randomSummary = String.format("%s %s %s",
@@ -25,8 +27,12 @@ public class JiraRequestHandler {
 
         JiraIssueObject issueObject = new JiraIssueObject();
         issueObject.getFields().setSummary(issueSummary);
-        issueObject.getFields().getProject().setId("10000");
-        issueObject.getFields().getIssuetype().setId(typeOfIssue.getCode());
+        issueObject.getFields().getProject().setId(projectId);
+        issueObject.getFields().getIssuetype().setId(issueTypeId);
+
+        if(!projectName.contains("FIRM")) {
+            issueObject.getFields().setPriority(null);
+        }
         if(typeOfIssue.equals(IssueTypesEnum.EPIC)) {
             issueObject.getFields().setCustomfield_10011(issueSummary);
         }
@@ -52,7 +58,7 @@ public class JiraRequestHandler {
         issueObject.getFields().setSummary(issueSummary);
         issueObject.getFields().setProject(null);
         issueObject.getFields().setIssuetype(null);
-        issueObject.getFields().setComponents(null);
+//        issueObject.getFields().setComponents(null);
         issueObject.getFields().setDescription(null);
         issueObject.getFields().setReporter(null);
         issueObject.getFields().setPriority(null);
@@ -84,7 +90,7 @@ public class JiraRequestHandler {
         issueObject.getFields().setSummary(null);
         issueObject.getFields().setProject(null);
         issueObject.getFields().setIssuetype(null);
-        issueObject.getFields().setComponents(null);
+//        issueObject.getFields().setComponents(null);
         issueObject.getFields().setDescription(null);
         issueObject.getFields().setReporter(null);
         issueObject.getFields().setLabels(null);
@@ -95,6 +101,19 @@ public class JiraRequestHandler {
         log.info("Edit of issue's priority object has been prepared.");
 
         JsonDataProvider.saveIssueObjectAsJsonFile(issueObject, filePathToSaveJson + "lastGeneratedJsonRequest.json");
+    }
+
+    public static void createJiraCreateNewProjectJson(String projectName, String projectKey, ProjectTypesEnum projectType, String filePathToSaveJson) {
+//        log.info("Preparing edit of issue's priority object for issue with id: " + issueId);
+
+        JiraNewProjectRequestObject jiraNewProjectRequestObject = new JiraNewProjectRequestObject();
+        jiraNewProjectRequestObject.setName(projectName);
+        jiraNewProjectRequestObject.setKey(projectKey);
+        jiraNewProjectRequestObject.setTemplateKey(projectType.getProjectTypeString());
+
+//        log.info("Edit of issue's priority object has been prepared.");
+
+        JsonDataProvider.saveIssueObjectAsJsonFile(jiraNewProjectRequestObject, filePathToSaveJson + "lastGeneratedJsonRequest.json");
     }
 
 

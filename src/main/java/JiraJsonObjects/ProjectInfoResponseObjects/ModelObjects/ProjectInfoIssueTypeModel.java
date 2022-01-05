@@ -1,12 +1,13 @@
-package JiraJsonObjects.ResponseObjects.ModelObjects;
+package JiraJsonObjects.ProjectInfoResponseObjects.ModelObjects;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class IssueTypeResponseModel {
+public class ProjectInfoIssueTypeModel {
     private String id;
     private String description;
     private String name;
+    private Integer avatarId;
 }

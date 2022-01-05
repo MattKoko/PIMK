@@ -1,4 +1,4 @@
-package JiraJsonObjects.ResponseObjects.ModelObjects;
+package JiraJsonObjects.SearchResponseObjects.ModelObjects;
 
 import lombok.Getter;
 import lombok.Setter;
