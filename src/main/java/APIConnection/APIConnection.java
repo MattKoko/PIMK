@@ -8,7 +8,6 @@ import io.restassured.config.EncoderConfig;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.apache.http.protocol.RequestUserAgent;
 import org.junit.Assert;
 
 import static io.restassured.RestAssured.given;
@@ -24,9 +23,10 @@ public class APIConnection {
     private static final String jiraURLEditDescription = "https://privatematkoko.atlassian.net/rest/internal/3/issue/PIMK-XXXX/description";
     private static final String jiraURLEditPriority = "https://privatematkoko.atlassian.net/rest/api/2/issue/PIMK-XXXX";
     private static final String jiraURLDeleteIssue = "https://privatematkoko.atlassian.net/rest/api/3/issue/PIMK-XXXX";
+    private static final String jiraURLSearchIssue = "https://privatematkoko.atlassian.net/rest/api/latest/search";
     private static final String jiraURLEditProject = "https://privatematkoko.atlassian.net/secure/project/EditProject.jspa";
 
-    public static String sendPostRequestForIssueCreationWithPayload() throws JSONNotFoundException {
+    public static Response sendPostRequestForIssueCreation() throws JSONNotFoundException {
         log.info("Preparing API request.");
         String payload = JsonParserInternal.getJsonAsString(locationOfPayload);
 
@@ -42,15 +42,11 @@ public class APIConnection {
 
         log.info("Sending API request.");
         Response response = request.post(jiraURLNewIssue);
-        String responseString = response.asString();
-        Assert.assertNotNull(responseString);
-        Integer responseStatusCode = response.getStatusCode();
-        log.info("API RESPONSE CODE: " + responseStatusCode);
-        Assert.assertTrue(responseStatusCode >= 200 && responseStatusCode < 300);
-        return responseString;
+        verificationOfResponse(response, false);
+        return response;
     }
 
-    public static String sendPutRequestForSummaryEditWithPayload(String issueId) throws JSONNotFoundException {
+    public static Response sendPutRequestForSummaryEdit(String issueId) throws JSONNotFoundException {
         log.info("Preparing API request.");
         String payload = JsonParserInternal.getJsonAsString(locationOfPayload);
 
@@ -59,22 +55,16 @@ public class APIConnection {
                 .header("accept", "application/json,text/javascript,*/*")
                 .header("content-type", "application/json")
                 .header("accept-language", "pl-PL,pl;q=0.9")
-//                .param("updateHistory", true)
-//                .param("applyDefaultValues", false)
                 .relaxedHTTPSValidation()
                 .body(payload);
 
         log.info("Sending API request.");
         Response response = request.put(jiraURLEditSummary.replace("PIMK-XXXX", issueId));
-        String responseString = response.asString();
-        Assert.assertNotNull(responseString);
-        Integer responseStatusCode = response.getStatusCode();
-        log.info("API RESPONSE CODE: " + responseStatusCode);
-        Assert.assertTrue(responseStatusCode >= 200 && responseStatusCode < 300);
-        return responseString;
+        verificationOfResponse(response, false);
+        return response;
     }
 
-    public static String sendPutRequestForDescriptionEditWithPayload(String issueId) throws JSONNotFoundException {
+    public static Response sendPutRequestForDescriptionEdit(String issueId) throws JSONNotFoundException {
         log.info("Preparing API request.");
         String payload = JsonParserInternal.getJsonAsString(locationOfPayload);
 
@@ -83,22 +73,16 @@ public class APIConnection {
                 .header("accept", "application/json,text/javascript,*/*")
                 .header("content-type", "application/json")
                 .header("accept-language", "pl-PL,pl;q=0.9")
-//                .param("updateHistory", true)
-//                .param("applyDefaultValues", false)
                 .relaxedHTTPSValidation()
                 .body(payload);
 
         log.info("Sending API request.");
         Response response = request.put(jiraURLEditDescription.replace("PIMK-XXXX", issueId));
-        String responseString = response.asString();
-        Assert.assertNotNull(responseString);
-        Integer responseStatusCode = response.getStatusCode();
-        log.info("API RESPONSE CODE: " + responseStatusCode);
-        Assert.assertTrue(responseStatusCode >= 200 && responseStatusCode < 300);
-        return responseString;
+        verificationOfResponse(response, false);
+        return response;
     }
 
-    public static String sendPutRequestForPriorityEditWithPayload(String issueId) throws JSONNotFoundException {
+    public static Response sendPutRequestForPriorityEdit(String issueId) throws JSONNotFoundException {
         log.info("Preparing API request.");
         String payload = JsonParserInternal.getJsonAsString(locationOfPayload);
 
@@ -107,22 +91,16 @@ public class APIConnection {
                 .header("accept", "application/json,text/javascript,*/*")
                 .header("content-type", "application/json")
                 .header("accept-language", "pl-PL,pl;q=0.9")
-//                .param("updateHistory", true)
-//                .param("applyDefaultValues", false)
                 .relaxedHTTPSValidation()
                 .body(payload);
 
         log.info("Sending API request.");
         Response response = request.put(jiraURLEditPriority.replace("PIMK-XXXX", issueId));
-        String responseString = response.asString();
-        Assert.assertNotNull(responseString);
-        Integer responseStatusCode = response.getStatusCode();
-        log.info("API RESPONSE CODE: " + responseStatusCode);
-        Assert.assertTrue(responseStatusCode >= 200 && responseStatusCode < 300);
-        return responseString;
+        verificationOfResponse(response, false);
+        return response;
     }
 
-    public static String sendDeleteRequestToDeleteIssueWithPayload(String issueId) throws JSONNotFoundException {
+    public static Response sendDeleteRequestToDeleteIssue(String issueId) throws JSONNotFoundException {
         log.info("Preparing API request.");
         String payload = JsonParserInternal.getJsonAsString(locationOfPayload);
 
@@ -137,15 +115,11 @@ public class APIConnection {
 
         log.info("Sending API request.");
         Response response = request.delete(jiraURLDeleteIssue.replace("PIMK-XXXX", issueId));
-        String responseString = response.asString();
-        Assert.assertNotNull(responseString);
-        Integer responseStatusCode = response.getStatusCode();
-        log.info("API RESPONSE CODE: " + responseStatusCode);
-        Assert.assertTrue(responseStatusCode >= 200 && responseStatusCode < 300);
-        return responseString;
+        verificationOfResponse(response, false);
+        return response;
     }
 
-    public static String sendPostRequestForProjectEditWithoutPayload() {
+    public static Response sendPostRequestForProjectEdit() {
         log.info("Preparing API request.");
         String randomString = "ATL 01";
 
@@ -169,11 +143,31 @@ public class APIConnection {
 
         log.info("Sending API request.");
         Response response = request.post(jiraURLEditProject);
-        String responseString = response.asString();
-        Assert.assertNotNull(responseString);
+        verificationOfResponse(response, true);
+        return response;
+    }
+
+    public static Response sendGetRequestForDescriptionEdit(String jql) {
+        log.info("Preparing API request.");
+
+
+        RequestSpecification request = given()
+                .header("Authorization", basicAuth)
+                .queryParam("jql", jql)
+                .relaxedHTTPSValidation();
+
+        log.info("Sending API request.");
+        Response response = request.get(jiraURLSearchIssue);
+        verificationOfResponse(response, false);
+        return response;
+    }
+
+    private static void verificationOfResponse(Response response, boolean isItPostVerification) {
+        Assert.assertNotNull(response.asString());
+
         Integer responseStatusCode = response.getStatusCode();
+        Integer maxResponseCode = (isItPostVerification) ? 400 : 300; //Extended accepted range of responses for POST
         log.info("API RESPONSE CODE: " + responseStatusCode);
-        Assert.assertTrue(responseStatusCode >= 200 && responseStatusCode < 400); //Extended accepted range of responses for POST
-        return responseString;
+        Assert.assertTrue(responseStatusCode >= 200 && responseStatusCode < maxResponseCode);
     }
 }

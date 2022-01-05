@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import io.restassured.response.Response;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -27,14 +28,14 @@ public class JsonParserInternal {
         }
     }
 
-    public static void saveStringAsJson(String jsonContentString, String filePath) throws JSONNotFoundException {
+    public static void saveResponseAsJson(Response response, String filePath) throws JSONNotFoundException {
         log.info("Saving JSON String in file");
 
         new File(filePath).mkdir();
 
         try(FileWriter writer = new FileWriter(new File(filePath), false)) {
             Gson gson = new GsonBuilder().disableHtmlEscaping().serializeNulls().setPrettyPrinting().create();
-            JsonElement jsonElement = new JsonParser().parse(jsonContentString);
+            JsonElement jsonElement = new JsonParser().parse(response.toString());
 
             writer.write(String.valueOf(gson.toJson(jsonElement)));
             log.info("File saved successfully in location: " + filePath);

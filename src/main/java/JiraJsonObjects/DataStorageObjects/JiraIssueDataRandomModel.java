@@ -7,7 +7,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class JiraIssueDataModel {
+public class JiraIssueDataRandomModel {
     private List<String> issueSummary;
     private List<String> issueDescription;
 }

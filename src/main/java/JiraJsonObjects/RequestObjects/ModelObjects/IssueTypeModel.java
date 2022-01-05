@@ -1,14 +1,14 @@
-package JiraJsonObjects.ModelObjects;
+package JiraJsonObjects.RequestObjects.ModelObjects;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class IssuetypeModel {
+public class IssueTypeModel {
     private String id;
 
-    public IssuetypeModel() {
+    public IssueTypeModel() {
         id = "00002";
     }
 }

@@ -1,4 +1,4 @@
-package JiraJsonObjects.ModelObjects;
+package JiraJsonObjects.RequestObjects.ModelObjects;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +10,7 @@ import java.util.List;
 @Setter
 public class FieldsModel {
     private ProjectModel project = new ProjectModel();
-    private IssuetypeModel issuetype = new IssuetypeModel();
+    private IssueTypeModel issuetype = new IssueTypeModel();
     private String summary = "Auto-Auto 007 task";
     private List<String> components = new ArrayList<>(); //probably Strings
     private DescriptionModel description = new DescriptionModel();

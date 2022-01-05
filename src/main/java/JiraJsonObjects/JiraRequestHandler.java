@@ -4,8 +4,8 @@ import DataParsers.JsonDataProvider;
 import DataParsers.RandomDataGenerator;
 import Enums.IssuePriorityEnum;
 import Enums.IssueTypesEnum;
-import JiraJsonObjects.DataStorageObjects.JiraIssueDataModel;
-import JiraJsonObjects.ModelObjects.DescriptionModel;
+import JiraJsonObjects.DataStorageObjects.JiraIssueDataRandomModel;
+import JiraJsonObjects.RequestObjects.ModelObjects.DescriptionModel;
 import JiraJsonObjects.RequestObjects.JiraIssueObject;
 import Utils.Log;
 
@@ -14,7 +14,7 @@ public class JiraRequestHandler {
 
     public static void createJiraNewIssueJson(IssueTypesEnum typeOfIssue, String filePathToSaveJson) {
         //Preparing random data for issue creation
-        JiraIssueDataModel jiraIssueData = JsonDataProvider.getJiraObjectFromJson(filePathToSaveJson + "Input\\randomJiraIssueData.json", JiraIssueDataModel.class);
+        JiraIssueDataRandomModel jiraIssueData = JsonDataProvider.getJiraObjectFromJson(filePathToSaveJson + "Input\\randomJiraIssueData.json", JiraIssueDataRandomModel.class);
         String randomSummary = String.format("%s %s %s",
                 RandomDataGenerator.getRandomElementFromList(jiraIssueData.getIssueSummary()),
                 RandomDataGenerator.getRandomElementFromList(jiraIssueData.getIssueSummary()),
@@ -37,7 +37,7 @@ public class JiraRequestHandler {
 
     public static void createJiraEditSummaryOfIssueJson(String issueId, IssueTypesEnum typeOfIssue, String filePathToSaveJson) {
         //Preparing random data for issue creation
-        JiraIssueDataModel jiraIssueData = JsonDataProvider.getJiraObjectFromJson(filePathToSaveJson + "Input\\randomJiraIssueData.json", JiraIssueDataModel.class);
+        JiraIssueDataRandomModel jiraIssueData = JsonDataProvider.getJiraObjectFromJson(filePathToSaveJson + "Input\\randomJiraIssueData.json", JiraIssueDataRandomModel.class);
         String randomSummary = String.format("%s %s %s",
                 RandomDataGenerator.getRandomElementFromList(jiraIssueData.getIssueSummary()),
                 RandomDataGenerator.getRandomElementFromList(jiraIssueData.getIssueSummary()),

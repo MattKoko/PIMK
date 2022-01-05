@@ -1,7 +1,7 @@
 package JiraJsonObjects.RequestObjects;
 
-import JiraJsonObjects.ModelObjects.FieldsModel;
-import JiraJsonObjects.ModelObjects.UpdateModel;
+import JiraJsonObjects.RequestObjects.ModelObjects.FieldsModel;
+import JiraJsonObjects.RequestObjects.ModelObjects.UpdateModel;
 import lombok.Getter;
 import lombok.Setter;
 
