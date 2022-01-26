@@ -30,44 +30,58 @@ public class Main {
             case "ci": // create issue
                 projectKeyForTest = args[1];
                 createNewIssue(args[2]);
+                break;
             case "esi": // edit summary of issue
                 projectKeyForTest = args[1];
                 editSummaryOfIssue(args[2]);
+                break;
             case "edi": // edit description of issue
                 projectKeyForTest = args[1];
                 editDescriptionOfIssue(args[2]);
+                break;
             case "epi": // edit priority of issue
                 projectKeyForTest = args[1];
                 editPriorityOfIssue(args[2], getPriorityByName(args[3]));
+                break;
             case "si": // search for issue
                 projectKeyForTest = args[1];
                 searchForIssue(args[2]);
+                break;
             case "di": // delete issue
                 projectKeyForTest = args[1];
                 deleteIssue(args[2]);
+                break;
             case "cp": // create project
                 createNewProject(args[1], getProjectTypeByName(args[2]));
+                break;
             case "ep": // edit project
                 projectKeyForTest = args[1];
                 editProjectDetails();
+                break;
             case "dp": // delete project
                 projectKeyForTest = args[1];
                 editProjectDetails();
+                break;
             case "t01": // test 01
                 projectKeyForTest = args[1];
                 test01IssueCreation();
+                break;
             case "t02": // test 02
                 projectKeyForTest = args[1];
                 test02IssueEdit();
+                break;
             case "t03": // test 03
                 projectKeyForTest = args[1];
                 test03ProjectCreation();
+                break;
             case "t04": // test 04
                 projectKeyForTest = args[1];
                 test04ProjectEdit();
+                break;
             case "t05": // test 05
                 projectKeyForTest = args[1];
                 test05Performance();
+                break;
         }
     }
 
