@@ -12,5 +12,6 @@ public class JiraProjectInfoResponseObject {
     private String id;
     private String key;
     private String name;
+    private String description;
     private List<ProjectInfoIssueTypeModel> issueTypes;
 }

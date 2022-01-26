@@ -6,6 +6,7 @@ import Enums.IssuePriorityEnum;
 import Enums.IssueTypesEnum;
 import Enums.ProjectTypesEnum;
 import JiraJsonObjects.DataStorageObjects.JiraIssueDataRandomModel;
+import JiraJsonObjects.DataStorageObjects.JiraProjectDataRandomModel;
 import JiraJsonObjects.IssueRequestObjects.ModelObjects.DescriptionModel;
 import JiraJsonObjects.IssueRequestObjects.JiraIssueObject;
 import JiraJsonObjects.NewProjectRequestObjects.JiraNewProjectRequestObject;
@@ -14,13 +15,14 @@ import Utils.Log;
 public class JiraRequestHandler {
     private static final Log log = new Log(new Object(){}.getClass().getEnclosingClass());
 
-    public static void createJiraNewIssueJson(String projectId, String projectName, String issueTypeId, IssueTypesEnum typeOfIssue, String filePathToSaveJson) {
+    public static void createJiraNewIssueJson(String projectId, String projectName, String issueName, String issueTypeId, IssueTypesEnum typeOfIssue, String filePathToSaveJson) {
         //Preparing random data for issue creation
         JiraIssueDataRandomModel jiraIssueData = JsonDataProvider.getJiraObjectFromJson(filePathToSaveJson + "Input\\randomJiraIssueData.json", JiraIssueDataRandomModel.class);
-        String randomSummary = String.format("%s %s %s",
-                RandomDataGenerator.getRandomElementFromList(jiraIssueData.getIssueSummary()),
-                RandomDataGenerator.getRandomElementFromList(jiraIssueData.getIssueSummary()),
-                RandomDataGenerator.getRandomElementFromList(jiraIssueData.getIssueSummary()));
+        String randomSummary = (issueName == null || issueName.equals(""))
+                ? String.format("%s %s %s", RandomDataGenerator.getRandomElementFromList(jiraIssueData.getIssueSummary()),
+                    RandomDataGenerator.getRandomElementFromList(jiraIssueData.getIssueSummary()),
+                    RandomDataGenerator.getRandomElementFromList(jiraIssueData.getIssueSummary()))
+                : issueName;
 
         String issueSummary = String.format("%s - API - %s - %s", typeOfIssue.name(), RandomDataGenerator.getRandomIssueNumber(), randomSummary);
         log.info("Preparing issue object with name: " + issueSummary);
@@ -49,7 +51,7 @@ public class JiraRequestHandler {
                 RandomDataGenerator.getRandomElementFromList(jiraIssueData.getIssueSummary()),
                 RandomDataGenerator.getRandomElementFromList(jiraIssueData.getIssueSummary()));
 
-        String issueSummary = String.format("%s - API - %s - %s - EDITED SUMMARY", typeOfIssue.name(), RandomDataGenerator.getRandomIssueNumber(), randomSummary);
+        String issueSummary = String.format("%s - API - %s - %s - (edited summary)", typeOfIssue.name(), RandomDataGenerator.getRandomIssueNumber(), randomSummary);
 
         log.info("Preparing edit of issue's summary object for issue with id: " + issueId);
 
@@ -103,8 +105,18 @@ public class JiraRequestHandler {
         JsonDataProvider.saveIssueObjectAsJsonFile(issueObject, filePathToSaveJson + "lastGeneratedJsonRequest.json");
     }
 
-    public static void createJiraCreateNewProjectJson(String projectName, String projectKey, ProjectTypesEnum projectType, String filePathToSaveJson) {
+    public static void createJiraCreateNewProjectJson(String newProjectName, ProjectTypesEnum projectType, String filePathToSaveJson) {
 //        log.info("Preparing edit of issue's priority object for issue with id: " + issueId);
+
+        //Preparing random data for issue creation
+        JiraProjectDataRandomModel jiraProjectData = JsonDataProvider.getJiraObjectFromJson(filePathToSaveJson + "Input\\randomJiraProjectData.json", JiraProjectDataRandomModel.class);
+        String randomName = (newProjectName == null || newProjectName.equals(""))
+                ? RandomDataGenerator.getRandomElementFromList(jiraProjectData.getProjectName())
+                : newProjectName;
+
+        String projectNumber = RandomDataGenerator.getRandomProjectNumber();
+        String projectName = String.format("API Project - %s - %s - %s", randomName, projectNumber, projectType.getProjectTypeName());
+        String projectKey = "API" + projectNumber;
 
         JiraNewProjectRequestObject jiraNewProjectRequestObject = new JiraNewProjectRequestObject();
         jiraNewProjectRequestObject.setName(projectName);

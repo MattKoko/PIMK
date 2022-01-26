@@ -28,7 +28,7 @@ public class JsonParserInternal {
         }
     }
 
-    public static void saveResponseAsJson(Response response, String filePath) throws JSONNotFoundException {
+    public static void saveResponseAsJson(Response response, String filePath) {
         log.info("Saving JSON String in file");
 
         new File(filePath).mkdir();
@@ -40,7 +40,7 @@ public class JsonParserInternal {
             writer.write(String.valueOf(gson.toJson(jsonElement)));
             log.info("File saved successfully in location: " + filePath);
         } catch (IOException e) {
-            throw new JSONNotFoundException(filePath);
+            log.error(new JSONNotFoundException(filePath).getMessage());
         }
     }
 }
