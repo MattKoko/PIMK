@@ -18,14 +18,5 @@
     "PWPW",
     "WPWP",
     "PPWW"
-  ],
-  "projectTemplate": [
-    "Scrum",
-    "Kanban",
-    "Issue Tracking"
-  ],
-  "projectType": [
-    "Team managed",
-    "Company managed"
   ]
 }
