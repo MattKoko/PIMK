@@ -36,3 +36,8 @@ Kod automatyzacji moze zostac uruchominy w kilku roznych trybach:
 
 Przykladowymi argumentami wywolania funkcji main() są: 
     main("ci", "PIMK", "New test issue")
+
+* Przed egzekucja automatyzacji, nastepujace wartosci zmiennych w klasie APIConnection, musza zostac zdefiowane:
+  - jiraURLMainProjectRepo
+  - basicAuth
+  - atlToken (opcjonalnie)
